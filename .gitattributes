@@ -1,0 +1,95 @@
+[attr]lfs                   -text filter=lfs diff=lfs merge=lfs
+[attr]unity-yaml            text merge=unityyamlmerge linguist-language=yaml
+
+*                           text=auto eol=lf
+*.cs                        text diff=csharp
+*.md                        text diff=markdown
+
+# Unity shader files
+*.cginc                     text
+*.compute                   text linguist-language=hlsl
+*.raytrace                  text linguist-language=hlsl
+*.shader                    text
+
+# Unity JSON files
+*.asmdef                    text linguist-language=json
+*.asmref                    text linguist-language=json
+*.index                     text linguist-language=json
+*.inputactions              text linguist-language=json
+*.shadergraph               text linguist-language=json
+*.shadersubgraph            text linguist-language=json
+
+# Unity UI Toolkit files
+*.tss                       text linguist-language=css diff=css
+*.uss                       text linguist-language=css diff=css
+*.uxml                      text linguist-language=xml linguist-detectable
+
+# Unity YAML files
+*.anim                      unity-yaml
+*.asset                     unity-yaml
+*.brush                     unity-yaml
+*.controller                unity-yaml
+*.cubemap                   unity-yaml
+*.flare                     unity-yaml
+*.fontsettings              unity-yaml
+*.giparams                  unity-yaml
+*.guiskin                   unity-yaml
+*.lighting                  unity-yaml
+*.mask                      unity-yaml
+*.mat                       unity-yaml
+*.meta                      unity-yaml
+*.mixer                     unity-yaml
+*.overrideController        unity-yaml
+*.physicMaterial            unity-yaml
+*.physicsMaterial2D         unity-yaml
+*.playable                  unity-yaml
+*.prefab                    unity-yaml
+*.preset                    unity-yaml
+*.renderTexture             unity-yaml
+*.scenetemplate             unity-yaml
+*.shadervariants            unity-yaml
+*.signal                    unity-yaml
+*.spriteatlas               unity-yaml
+*.spriteatlasv2             unity-yaml
+*.terrainlayer              unity-yaml
+*.unity                     unity-yaml
+
+# Hide settings and plugins from GitHub stats and diffs
+Assets/Plugins/**           linguist-generated
+Packages/packages-lock.json linguist-generated
+
+# Image formats
+*.exr                       lfs
+*.hdr                       lfs
+*.jpg                       lfs
+*.png                       lfs
+*.psd                       lfs
+*.tga                       lfs
+*.xcf                       lfs
+
+# Audio formats
+*.flac                      lfs
+*.ogg                       lfs
+*.wav                       lfs
+
+# Video formats
+*.mp4                       lfs
+*.ogv                       lfs
+*.vp8                       lfs
+*.webm                      lfs
+
+# 3D formats
+*.dae                       lfs
+*.dxf                       lfs
+*.fbx                       lfs
+*.obj                       lfs
+
+# Build
+*.dll                       lfs
+*.pdb                       lfs
+
+# Packaging
+*.7z                        lfs
+*.gz                        lfs
+*.tar                       lfs
+*.zip                       lfs

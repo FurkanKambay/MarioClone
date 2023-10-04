@@ -1,0 +1,10 @@
+{
+    "files.exclude": {
+        "Build/": true,
+        "Library/": true,
+        "Logs/": true,
+        "Temp/": true,
+        "UserSettings/": true
+    },
+    "dotnet.defaultSolution": "GameAI.sln"
+}
