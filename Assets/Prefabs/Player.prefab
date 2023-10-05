@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 3680928639673184529}
   - component: {fileID: 4971921450560476841}
   - component: {fileID: 2164422454441928872}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,7 +163,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5563220698265437564}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -194,7 +194,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa45737ed64094d43b10bd440e4c19f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 200
+  jumpForce: 6
+  isGrounded: 0
+  shouldJump: 0
 --- !u!58 &2164422454441928872
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -229,4 +232,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.57}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.2
