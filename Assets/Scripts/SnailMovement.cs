@@ -5,12 +5,13 @@ public class SnailMovement : MonoBehaviour
     public float speed = 100f;
     public float movement = 1f;
     public LayerMask bounceMask;
+    public float stunDuration = 5f;
 
     public bool isStunned;
 
     private Rigidbody2D body;
     private SpriteRenderer sprite;
-    private Animator anim;
+    private Animator animator;
 
     [SerializeField] private BoxCollider2D forwardTrigger;
     [SerializeField] private BoxCollider2D topTrigger;
@@ -20,13 +21,13 @@ public class SnailMovement : MonoBehaviour
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
-        sprite = GetComponent<SpriteRenderer>();
-        anim = GetComponent<Animator>();
+        sprite = GetComponentInChildren<SpriteRenderer>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
     {
-        anim.SetBool(animStunned, isStunned);
+        animator.SetBool(animStunned, isStunned);
     }
 
     private void FixedUpdate()
@@ -62,10 +63,9 @@ public class SnailMovement : MonoBehaviour
         if (topTrigger.IsTouchingLayers(LayerMask.GetMask("Player")))
         {
             isStunned = true;
-            // remove stun after 5 seconds
-            Invoke(nameof(ResetStun), 5f);
+            Invoke(nameof(RemoveStun), stunDuration);
         }
     }
 
-    private void ResetStun() => isStunned = false;
+    private void RemoveStun() => isStunned = false;
 }

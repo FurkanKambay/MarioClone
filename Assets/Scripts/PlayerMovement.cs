@@ -4,14 +4,15 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 100f;
     public float jumpForce = 5f;
-    [SerializeField] private BoxCollider2D groundTrigger;
 
     private Rigidbody2D body;
-    private SpriteRenderer sprite;
-    private Animator anim;
+    private BoxCollider2D groundTrigger;
 
-    [SerializeField] private bool isGrounded;
-    [SerializeField] private bool shouldJump;
+    private SpriteRenderer sprite;
+    private Animator animator;
+
+    private bool isGrounded;
+    private bool shouldJump;
     private float movementInput;
 
     private static readonly int animSpeed = Animator.StringToHash("Speed");
@@ -20,8 +21,9 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
-        sprite = GetComponent<SpriteRenderer>();
-        anim = GetComponent<Animator>();
+        sprite = GetComponentInChildren<SpriteRenderer>();
+        animator = GetComponentInChildren<Animator>();
+        groundTrigger = GetComponentInChildren<BoxCollider2D>();
     }
 
     private void Update()
@@ -40,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void PlayerWalk()
     {
-        anim.SetFloat(animSpeed, Mathf.Abs(body.velocity.x));
+        animator.SetFloat(animSpeed, Mathf.Abs(body.velocity.x));
 
         var x = movementInput * speed * Time.fixedDeltaTime;
         body.velocity = new Vector2(x, body.velocity.y);
@@ -48,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void PlayerJump()
     {
-        anim.SetBool(animJump, !isGrounded);
+        animator.SetBool(animJump, !isGrounded);
 
         if (isGrounded && shouldJump)
             body.velocity = new Vector2(body.velocity.x, jumpForce);
