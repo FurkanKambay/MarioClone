@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8388208037561432674}
   - component: {fileID: 3189378829050590291}
   m_Layer: 7
-  m_Name: Snail Visuals
+  m_Name: Beetle Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 42b35a526bbaf4d6a8de4766c6ec24e2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 638d72b23d1524368ac0a9268a466d04, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 2743479457884241043}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8fff7ffa3b0d0d54791f2a244c7af671, type: 2}
+  m_Controller: {fileID: 9100000, guid: e1544bbd2dee3464aaaf64be700db0e1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 6656954630630918236}
   - component: {fileID: 5146760047204311399}
   m_Layer: 7
-  m_Name: Snail
+  m_Name: Beetle
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

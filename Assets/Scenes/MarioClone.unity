@@ -1782,6 +1782,51 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!1001 &1775628868
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3109534949952866620, guid: 06116d6064a8e3c439f6fecefa98ee17, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.922293
+      objectReference: {fileID: 0}
+    - target: {fileID: 3109534949952866620, guid: 06116d6064a8e3c439f6fecefa98ee17, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.67422986
+      objectReference: {fileID: 0}
+    - target: {fileID: 3109534949952866620, guid: 06116d6064a8e3c439f6fecefa98ee17, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3109534949952866620, guid: 06116d6064a8e3c439f6fecefa98ee17, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3109534949952866620, guid: 06116d6064a8e3c439f6fecefa98ee17, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3109534949952866620, guid: 06116d6064a8e3c439f6fecefa98ee17, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602745791702277642, guid: 06116d6064a8e3c439f6fecefa98ee17, type: 3}
+      propertyPath: m_Name
+      value: Beetle
+      objectReference: {fileID: 0}
+    - target: {fileID: 5146760047204311399, guid: 06116d6064a8e3c439f6fecefa98ee17, type: 3}
+      propertyPath: stunDuration
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 06116d6064a8e3c439f6fecefa98ee17, type: 3}
 --- !u!1001 &1056085779898605320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1792,11 +1837,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3109534949952866620, guid: 94c73a9c40c44214dad394164b578860, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.5
+      value: 7.25
       objectReference: {fileID: 0}
     - target: {fileID: 3109534949952866620, guid: 94c73a9c40c44214dad394164b578860, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 4.75
       objectReference: {fileID: 0}
     - target: {fileID: 3109534949952866620, guid: 94c73a9c40c44214dad394164b578860, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1817,6 +1862,10 @@ PrefabInstance:
     - target: {fileID: 3602745791702277642, guid: 94c73a9c40c44214dad394164b578860, type: 3}
       propertyPath: m_Name
       value: Snail
+      objectReference: {fileID: 0}
+    - target: {fileID: 5146760047204311399, guid: 94c73a9c40c44214dad394164b578860, type: 3}
+      propertyPath: stunDuration
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1877,4 +1926,5 @@ SceneRoots:
   m_Roots:
   - {fileID: 8554051554473835840}
   - {fileID: 1056085779898605320}
+  - {fileID: 1775628868}
   - {fileID: 767359253}

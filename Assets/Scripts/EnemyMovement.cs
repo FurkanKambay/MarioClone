@@ -1,16 +1,16 @@
 using UnityEngine;
 
-public class SnailMovement : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
     public float speed = 100f;
     public float movement = 1f;
-    public float stunDuration = 5f;
+    public float stunDuration = 1f;
 
     public LayerMask bounceMask;
     [SerializeField] private BoxCollider2D forwardTrigger;
     [SerializeField] private BoxCollider2D topTrigger;
 
-    private bool isStunned;
+    private bool isDying;
 
     private Rigidbody2D body;
     private SpriteRenderer sprite;
@@ -25,28 +25,23 @@ public class SnailMovement : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
     }
 
-    private void Update()
-    {
-        animator.SetBool(animStunned, isStunned);
-    }
-
     private void FixedUpdate()
     {
-        SnailMove();
-        SnailBounce();
-        SnailStun();
-    }
-
-    private void SnailMove()
-    {
-        if (isStunned)
+        if (isDying)
             return;
 
+        Walk();
+        Bounce();
+        CheckIfDying();
+    }
+
+    private void Walk()
+    {
         var x = movement * speed * Time.fixedDeltaTime;
         body.velocity = new Vector2(x, body.velocity.y);
     }
 
-    private void SnailBounce()
+    private void Bounce()
     {
         if (forwardTrigger.IsTouchingLayers(bounceMask))
         {
@@ -58,14 +53,15 @@ public class SnailMovement : MonoBehaviour
         }
     }
 
-    private void SnailStun()
+    private void CheckIfDying()
     {
         if (topTrigger.IsTouchingLayers(LayerMask.GetMask("Player")))
         {
-            isStunned = true;
-            Invoke(nameof(RemoveStun), stunDuration);
+            isDying = true;
+            animator.SetBool(animStunned, isDying);
+            Invoke(nameof(Die), stunDuration);
         }
     }
 
-    private void RemoveStun() => isStunned = false;
+    private void Die() => Destroy(this.gameObject);
 }
