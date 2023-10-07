@@ -23,7 +23,6 @@ public class PlayerMovement : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         sprite = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
-        // groundTrigger = GetComponentInChildren<BoxCollider2D>();
     }
 
     private void Update()
@@ -50,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void PlayerJump()
     {
-        animator.SetBool(animJump, !isGrounded);
+        animator.SetBool(animJump, shouldJump && !isGrounded);
 
         if (isGrounded && shouldJump)
             body.velocity = new Vector2(body.velocity.x, jumpForce);
