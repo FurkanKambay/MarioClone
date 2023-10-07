@@ -4,17 +4,17 @@ public class SnailMovement : MonoBehaviour
 {
     public float speed = 100f;
     public float movement = 1f;
-    public LayerMask bounceMask;
     public float stunDuration = 5f;
 
-    public bool isStunned;
+    public LayerMask bounceMask;
+    [SerializeField] private BoxCollider2D forwardTrigger;
+    [SerializeField] private BoxCollider2D topTrigger;
+
+    private bool isStunned;
 
     private Rigidbody2D body;
     private SpriteRenderer sprite;
     private Animator animator;
-
-    [SerializeField] private BoxCollider2D forwardTrigger;
-    [SerializeField] private BoxCollider2D topTrigger;
 
     private static readonly int animStunned = Animator.StringToHash("IsStunned");
 

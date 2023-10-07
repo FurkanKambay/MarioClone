@@ -227,11 +227,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a70f9f36487554459a82396b077d7f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
+  speed: 40
   movement: -1
   bounceMask:
     serializedVersion: 2
     m_Bits: 72
+  stunDuration: 5
   isStunned: 0
   forwardTrigger: {fileID: 3114375007778694980}
   topTrigger: {fileID: 3305093782821346219}
