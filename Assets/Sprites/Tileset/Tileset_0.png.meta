@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -123,15 +123,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Grass_ground
+      name: Grass_top_left
       rect:
         serializedVersion: 2
         x: 0
-        y: 340
-        width: 204
-        height: 136
+        y: 408
+        width: 68
+        height: 68
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -144,76 +144,286 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tileset_0_1
+      name: Grass_bottom_left
       rect:
         serializedVersion: 2
-        x: 353
+        x: 0
+        y: 340
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e721776cd0cbd340af552c904b48bcd
+      internalID: -964917484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_top
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 408
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7a5c90b25a26bc4193a464735fff40f
+      internalID: 1127985774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_top_right
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 408
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 083df8262a1837c40854c33d13a7a759
+      internalID: -2075352893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_bottom
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 340
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dbc31fd69db0554cb5b767519d6e688
+      internalID: -375390516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_bottom_right
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 340
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 075eda5c337319947abd45a2bec52f58
+      internalID: 305408363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform_single
+      rect:
+        serializedVersion: 2
+        x: 136
         y: 204
-        width: 247
-        height: 230
+        width: 68
+        height: 68
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c14506b8f0ffd64399e05fec0a26b5d
-      internalID: 2053972402
+      spriteID: a3e5c45c3a4e5b546ab24dbf39d2dd3c
+      internalID: 180857836
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tileset_0_2
+      name: Platform_left
       rect:
         serializedVersion: 2
-        x: 611
+        x: 0
+        y: 136
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebf8feb60f4ba804292f9355f031de55
+      internalID: 1376258899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform_middle
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 136
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3295393a4ce1e8545b1789f8586ea8c1
+      internalID: -2126971409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform_right
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 136
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2da8f209620bbe84bba3c2533e25e103
+      internalID: 1356274200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water_top
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 408
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c146b6e2fd04474468ba62f0d7af7261
+      internalID: 1238965024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water_bottom
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 340
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50a0626df5eed63429d4101883edc080
+      internalID: 1649074364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_w1
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 204
-        width: 261
-        height: 263
+        width: 68
+        height: 68
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24c7c9e5a156be545a91cadf96e6cd25
-      internalID: 815702088
+      spriteID: f3e1e4649a6cb7045b77848e27ed3d32
+      internalID: -293601719
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tileset_0_3
+      name: Grass_w2
       rect:
         serializedVersion: 2
-        x: 210
-        y: 136
-        width: 191
-        height: 41
+        x: 68
+        y: 204
+        width: 68
+        height: 68
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2e529596f0648b4087fe071f129e34e
-      internalID: 451208255
+      spriteID: 646b611572fdcd641b20de128e67c03c
+      internalID: -1547888196
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tileset_0_4
+      name: Grass_dirt
       rect:
         serializedVersion: 2
-        x: 426
-        y: 135
-        width: 103
-        height: 40
+        x: 68
+        y: 272
+        width: 68
+        height: 68
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,197 +431,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aafaa2c7137787a4bb897c23188c2d20
-      internalID: -2136792739
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tileset_0_5
-      rect:
-        serializedVersion: 2
-        x: 565
-        y: 136
-        width: 90
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf042d81e5de2254d8daf60dd204d3ae
-      internalID: 2048078358
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tileset_0_6
-      rect:
-        serializedVersion: 2
-        x: 680
-        y: 0
-        width: 204
-        height: 204
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9e93346a1f8298f46839fa3d5b231e68
-      internalID: -453850593
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tileset_0_7
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 67
-        width: 125
-        height: 65
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f32c29b0fece9964a992bcbf4be4e3bf
-      internalID: 206875914
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tileset_0_8
-      rect:
-        serializedVersion: 2
-        x: 137
-        y: 68
-        width: 65
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8481b830130ff6d4c89500ceeba4450b
-      internalID: 652414475
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tileset_0_9
-      rect:
-        serializedVersion: 2
-        x: 211
-        y: 0
-        width: 124
-        height: 134
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 29d20896376c8d94592d6943b17e684e
-      internalID: 1307259403
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tileset_0_10
-      rect:
-        serializedVersion: 2
-        x: 376
-        y: 17
-        width: 137
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a31abd3d5ceb66846adc2cebd677a37d
-      internalID: 1073363172
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tileset_0_11
-      rect:
-        serializedVersion: 2
-        x: 544
-        y: 0
-        width: 132
-        height: 118
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2b07d10ad83cf9b478aa00add602c597
-      internalID: -1085439167
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tileset_0_12
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 0
-        width: 130
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 12c783d6a3eedbf4588218aecbdea870
-      internalID: 1043309290
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tileset_0_13
-      rect:
-        serializedVersion: 2
-        x: 140
-        y: 0
-        width: 61
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b77b9fe45338fe64d9b507f973d769da
-      internalID: -1774853980
+      spriteID: 2bd46abcce8e07a49922e76909024042
+      internalID: 1847288027
       vertices: []
       indices: 
       edges: []
@@ -427,7 +448,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Grass_ground: -1056529899
+      Grass_bottom: -375390516
+      Grass_bottom_left: -964917484
+      Grass_bottom_right: 305408363
+      Grass_dirt: 1847288027
+      Grass_top: 1127985774
+      Grass_top_left: -1056529899
+      Grass_top_right: -2075352893
+      Grass_w1: -293601719
+      Grass_w2: -1547888196
+      Platform_left: 1376258899
+      Platform_middle: -2126971409
+      Platform_right: 1356274200
+      Platform_single: 180857836
       Tileset_0_1: 2053972402
       Tileset_0_10: 1073363172
       Tileset_0_11: -1085439167
@@ -441,6 +474,8 @@ TextureImporter:
       Tileset_0_7: 206875914
       Tileset_0_8: 652414475
       Tileset_0_9: 1307259403
+      Water_bottom: 1649074364
+      Water_top: 1238965024
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
