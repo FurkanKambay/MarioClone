@@ -4,9 +4,9 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 100f;
     public float jumpForce = 5f;
+    [SerializeField] private BoxCollider2D groundTrigger;
 
     private Rigidbody2D body;
-    private BoxCollider2D groundTrigger;
 
     private SpriteRenderer sprite;
     private Animator animator;
@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         sprite = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
-        groundTrigger = GetComponentInChildren<BoxCollider2D>();
+        // groundTrigger = GetComponentInChildren<BoxCollider2D>();
     }
 
     private void Update()
