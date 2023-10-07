@@ -4,7 +4,8 @@
         "Library/": true,
         "Logs/": true,
         "Temp/": true,
-        "UserSettings/": true
+        "UserSettings/": true,
+        "**/*.meta": true
     },
-    "dotnet.defaultSolution": "GameAI.sln"
+    "dotnet.defaultSolution": "MarioClone.sln"
 }
