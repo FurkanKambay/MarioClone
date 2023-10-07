@@ -229,11 +229,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 40
   movement: -1
+  stunDuration: 5
   bounceMask:
     serializedVersion: 2
     m_Bits: 72
-  stunDuration: 5
-  isStunned: 0
   forwardTrigger: {fileID: 3114375007778694980}
   topTrigger: {fileID: 3305093782821346219}
 --- !u!1 &4934323602160538689
@@ -311,7 +310,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 1.5}
+  m_Size: {x: 0.2, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &5236180743382248825
 GameObject:
