@@ -7,8 +7,10 @@ public class EnemyMovement : MonoBehaviour
     public float stunDuration = 1f;
 
     public LayerMask bounceMask;
-    [SerializeField] private BoxCollider2D forwardTrigger;
     [SerializeField] private BoxCollider2D topTrigger;
+
+    [Tooltip("The first item must be the forward (bounce) trigger")]
+    [SerializeField] private BoxCollider2D[] sideTriggers;
 
     private bool isDying;
 
@@ -33,6 +35,7 @@ public class EnemyMovement : MonoBehaviour
         Walk();
         Bounce();
         CheckIfDying();
+        CheckAttackBoxes();
     }
 
     private void Walk()
@@ -43,13 +46,27 @@ public class EnemyMovement : MonoBehaviour
 
     private void Bounce()
     {
-        if (forwardTrigger.IsTouchingLayers(bounceMask))
-        {
-            var scale = transform.localScale;
-            scale.x *= -1;
-            transform.localScale = scale;
+        var bounceBox = sideTriggers[0];
+        if (!bounceBox.IsTouchingLayers(bounceMask))
+            return;
 
-            movement = -movement;
+        var scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
+
+        movement = -movement;
+    }
+
+    private void CheckAttackBoxes()
+    {
+        foreach (BoxCollider2D box in sideTriggers)
+        {
+            if (!box.IsTouchingLayers(LayerMask.GetMask("Player")))
+                continue;
+
+            // kill player
+            // + death screen or respawn
+            return;
         }
     }
 
