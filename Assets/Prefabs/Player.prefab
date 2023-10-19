@@ -47,7 +47,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -195,6 +195,7 @@ GameObject:
   - component: {fileID: 3680928639673184529}
   - component: {fileID: 5079265137346387950}
   - component: {fileID: 4971921450560476841}
+  - component: {fileID: 8070902726327692178}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -306,3 +307,19 @@ MonoBehaviour:
   speed: 200
   jumpForce: 10
   groundTrigger: {fileID: 5476046134689180095}
+--- !u!114 &8070902726327692178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5563220698265437564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 413596b420bf4244ca863a1b2e5df8eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectibles:
+    serializedVersion: 2
+    m_Bits: 256
+  coinsCollected: 0
