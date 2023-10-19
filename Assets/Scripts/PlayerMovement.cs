@@ -1,9 +1,13 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public event Action Jumped;
+
     public float speed = 100f;
     public float jumpForce = 5f;
+
     [SerializeField] private BoxCollider2D groundTrigger;
 
     private Rigidbody2D body;
@@ -28,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         movementInput = Input.GetAxisRaw("Horizontal");
-        shouldJump = Input.GetButton("Jump");
+        shouldJump = Input.GetButtonDown("Jump");
         SetSpriteDirection(movementInput < 0);
     }
 
@@ -52,7 +56,10 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool(animJump, shouldJump && !isGrounded);
 
         if (isGrounded && shouldJump)
+        {
             body.velocity = new Vector2(body.velocity.x, jumpForce);
+            Jumped.Invoke();
+        }
     }
 
     private void SetSpriteDirection(bool faceLeft)

@@ -886,7 +886,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinCollector: {fileID: 1173755505}
+  playerMovement: {fileID: 1173755506}
   coinCollectSound: {fileID: 8300000, guid: 38d2e41ed41226441abb27a976fb46c2, type: 3}
+  jumpSound: {fileID: 8300000, guid: d556950da7dfc94429358a80bf2ffb2b, type: 3}
 --- !u!82 &1008133576
 AudioSource:
   m_ObjectHideFlags: 0
@@ -992,6 +994,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 413596b420bf4244ca863a1b2e5df8eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1173755506 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4971921450560476841, guid: 5fb212575e3ea3247826c28399ccb7b5, type: 3}
+  m_PrefabInstance: {fileID: 8554051554473835840}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa45737ed64094d43b10bd440e4c19f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1574214981
