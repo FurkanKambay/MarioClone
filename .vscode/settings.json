@@ -4,8 +4,10 @@
         "Library/": true,
         "Logs/": true,
         "Temp/": true,
+        "obj/": true,
         "UserSettings/": true,
-        "**/*.meta": true
+        "**/*.meta": true,
+        "Packages/packages-lock.json": true
     },
     "dotnet.defaultSolution": "MarioClone.sln"
 }

@@ -195,6 +195,8 @@ GameObject:
   - component: {fileID: 3680928639673184529}
   - component: {fileID: 5079265137346387950}
   - component: {fileID: 4971921450560476841}
+  - component: {fileID: 4089278213786182915}
+  - component: {fileID: 929687877162765163}
   - component: {fileID: 8070902726327692178}
   m_Layer: 3
   m_Name: Player
@@ -304,9 +306,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa45737ed64094d43b10bd440e4c19f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 200
-  jumpForce: 10
+  Speed: 200
+  JumpForce: 10
+  HurtForce: {x: 4, y: 6}
   groundTrigger: {fileID: 5476046134689180095}
+--- !u!114 &4089278213786182915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5563220698265437564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f3e16575c63da645b1c7e8986700da8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 3
+  CurrentHealth: 0
+  InvincibilityTime: 1
+  RespawnTime: 3
+  respawnPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &929687877162765163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5563220698265437564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5400f4aef1874e4b9e269ac48f855ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8070902726327692178
 MonoBehaviour:
   m_ObjectHideFlags: 0

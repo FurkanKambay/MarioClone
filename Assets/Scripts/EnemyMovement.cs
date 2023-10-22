@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -18,6 +19,8 @@ public class EnemyMovement : MonoBehaviour
     private SpriteRenderer sprite;
     private Animator animator;
 
+    private Health playerHealth;
+
     private static readonly int animStunned = Animator.StringToHash("IsStunned");
 
     private void Awake()
@@ -25,6 +28,9 @@ public class EnemyMovement : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         sprite = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
+
+        var player = GameObject.FindWithTag("Player");
+        playerHealth = player.GetComponent<Health>();
     }
 
     private void FixedUpdate()
@@ -64,7 +70,7 @@ public class EnemyMovement : MonoBehaviour
             if (!box.IsTouchingLayers(LayerMask.GetMask("Player")))
                 continue;
 
-            // kill player
+            playerHealth.InflictDamage(1, transform.position);
             // + death screen or respawn
             return;
         }
@@ -76,9 +82,14 @@ public class EnemyMovement : MonoBehaviour
         {
             isDying = true;
             animator.SetBool(animStunned, isDying);
-            Invoke(nameof(Die), StunDuration);
+
+            StartCoroutine(Die());
         }
     }
 
-    private void Die() => Destroy(this.gameObject);
+    private IEnumerator Die()
+    {
+        yield return new WaitForSeconds(StunDuration);
+        Destroy(gameObject);
+    }
 }

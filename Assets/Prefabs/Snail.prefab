@@ -305,9 +305,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a70f9f36487554459a82396b077d7f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
-  movement: -1
-  stunDuration: 1
+  Speed: 50
+  Movement: 1
+  StunDuration: 1
   bounceMask:
     serializedVersion: 2
     m_Bits: 200

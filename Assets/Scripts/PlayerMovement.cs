@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -7,61 +8,74 @@ public class PlayerMovement : MonoBehaviour
 
     public float Speed = 100f;
     public float JumpForce = 5f;
+    public Vector2 HurtForce = Vector2.one * 5f;
+
+    public float WalkInput { get; private set; }
+    public float Velocity => body.velocity.x;
 
     [SerializeField] private BoxCollider2D groundTrigger;
 
     private Rigidbody2D body;
+    private Health health;
 
-    private SpriteRenderer sprite;
-    private Animator animator;
-
-    private bool isGrounded;
-    private bool shouldJump;
-    private float movementInput;
-
-    private static readonly int animSpeed = Animator.StringToHash("Speed");
-    private static readonly int animJump = Animator.StringToHash("Jump");
+    public bool IsGrounded { get; private set; }
+    public bool JumpInput { get; private set; }
+    public bool CanMove { get; private set; } = true;
 
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
-        sprite = GetComponentInChildren<SpriteRenderer>();
-        animator = GetComponentInChildren<Animator>();
+        health = GetComponent<Health>();
+        health.DamageTaken += OnDamageTaken;
+    }
+
+    private void OnDamageTaken(Vector3 sourcePosition)
+    {
+        CanMove = false;
+
+        Vector3 direction = (sourcePosition - transform.position).normalized;
+        body.velocity = new Vector2(-direction.x * HurtForce.x, HurtForce.y);
+
+        IEnumerator EnableMovementAfterDelay()
+        {
+            yield return new WaitForSeconds(0.5f);
+            CanMove = true;
+        }
+
+        StartCoroutine(EnableMovementAfterDelay());
     }
 
     private void Update()
     {
-        movementInput = Input.GetAxisRaw("Horizontal");
-        shouldJump = Input.GetButton("Jump");
-        SetSpriteDirection(movementInput < 0);
+        WalkInput = Input.GetAxisRaw("Horizontal");
+        JumpInput = Input.GetButton("Jump");
     }
 
     private void FixedUpdate()
     {
-        isGrounded = groundTrigger.IsTouchingLayers(LayerMask.GetMask("Ground"));
-        PlayerWalk();
-        PlayerJump();
+        IsGrounded = groundTrigger.IsTouchingLayers(LayerMask.GetMask("Ground"));
+
+        if (groundTrigger.IsTouchingLayers(LayerMask.GetMask("Enemy")))
+            Jump();
+
+        if (!CanMove)
+            return;
+
+        Walk(Time.deltaTime);
+
+        if (JumpInput && IsGrounded)
+            Jump();
     }
 
-    private void PlayerWalk()
+    private void Walk(float delta)
     {
-        animator.SetFloat(animSpeed, Mathf.Abs(body.velocity.x));
-
-        float x = movementInput * Speed * Time.fixedDeltaTime;
+        float x = WalkInput * Speed * delta;
         body.velocity = new Vector2(x, body.velocity.y);
     }
 
-    private void PlayerJump()
+    private void Jump()
     {
-        animator.SetBool(animJump, shouldJump && !isGrounded);
-
-        if (isGrounded && shouldJump)
-        {
-            body.velocity = new Vector2(body.velocity.x, JumpForce);
-            Jumped.Invoke();
-        }
+        body.velocity = new Vector2(body.velocity.x, JumpForce);
+        Jumped.Invoke();
     }
-
-    private void SetSpriteDirection(bool faceLeft)
-        => sprite.flipX = faceLeft;
 }
