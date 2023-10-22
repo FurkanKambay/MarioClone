@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         health = GetComponent<Health>();
         health.DamageTaken += OnDamageTaken;
+        health.Died += () => CanMove = false;
+        health.Respawned += () => CanMove = true;
     }
 
     private void OnDamageTaken(Vector3 sourcePosition)

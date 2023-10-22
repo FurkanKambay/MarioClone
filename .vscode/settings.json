@@ -10,7 +10,7 @@
         "*.sln": true,
         "Packages/packages-lock.json": true,
         "Assets/Plugins": true,
-        "**/*.meta": true,
+        "**/*.meta": true
     },
     "files.readonlyInclude": {
         "**/*.unity": true,
@@ -18,7 +18,7 @@
         "**/*.asset": true,
         "**/*.anim": true,
         "**/*.controller": true,
-        "**/*.physicsMaterial2D": true,
+        "**/*.physicsMaterial2D": true
     },
     "dotnet.defaultSolution": "MarioClone.sln"
 }

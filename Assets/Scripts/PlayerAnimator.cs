@@ -22,6 +22,9 @@ public class PlayerAnimator : MonoBehaviour
             animator.SetTrigger(animHurt);
             StartCoroutine(ResetTriggerAfterDelay());
         };
+
+        health.Died += () => sprite.enabled = false;
+        health.Respawned += () => sprite.enabled = true;
     }
 
     private void Update() => sprite.flipX = movement.WalkInput < 0;
