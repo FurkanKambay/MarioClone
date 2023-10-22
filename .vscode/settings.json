@@ -6,8 +6,19 @@
         "Temp/": true,
         "obj/": true,
         "UserSettings/": true,
+        "*.csproj": true,
+        "*.sln": true,
+        "Packages/packages-lock.json": true,
+        "Assets/Plugins": true,
         "**/*.meta": true,
-        "Packages/packages-lock.json": true
+    },
+    "files.readonlyInclude": {
+        "**/*.unity": true,
+        "**/*.prefab": true,
+        "**/*.asset": true,
+        "**/*.anim": true,
+        "**/*.controller": true,
+        "**/*.physicsMaterial2D": true,
     },
     "dotnet.defaultSolution": "MarioClone.sln"
 }
