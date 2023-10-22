@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 50
-  Movement: 1
+  Movement: -1
   StunDuration: 1
   bounceMask:
     serializedVersion: 2
