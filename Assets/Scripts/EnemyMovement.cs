@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float speed = 100f;
-    public float movement = 1f;
-    public float stunDuration = 1f;
+    public float Speed = 100f;
+    public float Movement = 1f;
+    public float StunDuration = 1f;
 
-    public LayerMask bounceMask;
+    [SerializeField] private LayerMask bounceMask;
     [SerializeField] private BoxCollider2D topTrigger;
 
     [Tooltip("The first item must be the forward (bounce) trigger")]
@@ -32,29 +32,29 @@ public class EnemyMovement : MonoBehaviour
         if (isDying)
             return;
 
-        Walk();
+        Walk(Time.deltaTime);
         Bounce();
         CheckIfDying();
         CheckAttackBoxes();
     }
 
-    private void Walk()
+    private void Walk(float delta)
     {
-        var x = movement * speed * Time.fixedDeltaTime;
+        float x = Movement * Speed * delta;
         body.velocity = new Vector2(x, body.velocity.y);
     }
 
     private void Bounce()
     {
-        var bounceBox = sideTriggers[0];
+        BoxCollider2D bounceBox = sideTriggers[0];
         if (!bounceBox.IsTouchingLayers(bounceMask))
             return;
 
-        var scale = transform.localScale;
+        Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
 
-        movement = -movement;
+        Movement = -Movement;
     }
 
     private void CheckAttackBoxes()
@@ -76,7 +76,7 @@ public class EnemyMovement : MonoBehaviour
         {
             isDying = true;
             animator.SetBool(animStunned, isDying);
-            Invoke(nameof(Die), stunDuration);
+            Invoke(nameof(Die), StunDuration);
         }
     }
 

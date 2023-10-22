@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    [SerializeField] CoinCollector coinCollector;
-    [SerializeField] PlayerMovement playerMovement;
+    [SerializeField] private CoinCollector coinCollector;
+    [SerializeField] private PlayerMovement playerMovement;
 
-    [SerializeField] AudioClip coinCollectSound;
-    [SerializeField] AudioClip jumpSound;
+    [SerializeField] private AudioClip coinCollectSound;
+    [SerializeField] private AudioClip jumpSound;
 
     private AudioSource audioSource;
 

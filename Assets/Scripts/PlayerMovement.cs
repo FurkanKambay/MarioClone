@@ -5,8 +5,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public event Action Jumped;
 
-    public float speed = 100f;
-    public float jumpForce = 5f;
+    public float Speed = 100f;
+    public float JumpForce = 5f;
 
     [SerializeField] private BoxCollider2D groundTrigger;
 
@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         movementInput = Input.GetAxisRaw("Horizontal");
-        shouldJump = Input.GetButtonDown("Jump");
+        shouldJump = Input.GetButton("Jump");
         SetSpriteDirection(movementInput < 0);
     }
 
@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
     {
         animator.SetFloat(animSpeed, Mathf.Abs(body.velocity.x));
 
-        var x = movementInput * speed * Time.fixedDeltaTime;
+        float x = movementInput * Speed * Time.fixedDeltaTime;
         body.velocity = new Vector2(x, body.velocity.y);
     }
 
@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded && shouldJump)
         {
-            body.velocity = new Vector2(body.velocity.x, jumpForce);
+            body.velocity = new Vector2(body.velocity.x, JumpForce);
             Jumped.Invoke();
         }
     }

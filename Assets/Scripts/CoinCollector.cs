@@ -5,7 +5,7 @@ public class CoinCollector : MonoBehaviour
 {
     public event Action<int> CoinCollected;
 
-    private int coinsCollected = 0;
+    private int coinsCollected;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
