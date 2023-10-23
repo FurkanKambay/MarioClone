@@ -27,7 +27,17 @@ public class PlayerAnimator : MonoBehaviour
         health.Respawned += () => sprite.enabled = true;
     }
 
-    private void Update() => sprite.flipX = movement.WalkInput < 0;
+    private void Update()
+    {
+        Vector3 scale = transform.localScale;
+        scale.x = movement.WalkInput switch
+        {
+            < 0 => -1,
+            > 0 => 1,
+            _ => scale.x,
+        };
+        transform.localScale = scale;
+    }
 
     private void FixedUpdate()
     {

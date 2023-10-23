@@ -651,6 +651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 3}
+  SmoothTime: {x: 0.5, y: 0.01}
 --- !u!1001 &601497914
 PrefabInstance:
   m_ObjectHideFlags: 0
