@@ -6,10 +6,12 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip deathSound;
     [SerializeField] private AudioClip jumpSound;
     [SerializeField] private AudioClip coinCollectSound;
+    [SerializeField] private AudioClip bulletFireSound;
 
     private Health playerHealth;
     private PlayerMovement playerMovement;
     private CoinCollector coinCollector;
+    private PlayerAttack playerAttack;
 
     private AudioSource audioSource;
 
@@ -21,6 +23,7 @@ public class SoundManager : MonoBehaviour
         playerHealth = player.GetComponent<Health>();
         playerMovement = player.GetComponent<PlayerMovement>();
         coinCollector = player.GetComponent<CoinCollector>();
+        playerAttack = player.GetComponentInChildren<PlayerAttack>();
 
         if (playerHealth)
         {
@@ -33,5 +36,8 @@ public class SoundManager : MonoBehaviour
 
         if (playerMovement && jumpSound)
             playerMovement.Jumped += () => audioSource.PlayOneShot(jumpSound);
+
+        if (playerAttack && bulletFireSound)
+            playerAttack.BulletFired += () => audioSource.PlayOneShot(bulletFireSound);
     }
 }

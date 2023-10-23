@@ -1,11 +1,14 @@
+using System;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] private GameObject bulletPrefab;
+    public event Action BulletFired;
 
     public float BulletSpeed = 10f;
     public float FireRate = 1f;
+
+    [SerializeField] private GameObject bulletPrefab;
 
     private float timeSinceLastFire = 0f;
 
@@ -29,5 +32,7 @@ public class PlayerAttack : MonoBehaviour
 
         Bullet bullet = instance.GetComponent<Bullet>();
         bullet.Speed = BulletSpeed;
+
+        BulletFired?.Invoke();
     }
 }

@@ -1181,6 +1181,7 @@ MonoBehaviour:
   deathSound: {fileID: 8300000, guid: 4f99c50f146bebb409985681bbd4b556, type: 3}
   jumpSound: {fileID: 8300000, guid: d556950da7dfc94429358a80bf2ffb2b, type: 3}
   coinCollectSound: {fileID: 8300000, guid: 38d2e41ed41226441abb27a976fb46c2, type: 3}
+  bulletFireSound: {fileID: 8300000, guid: b95942cee1f70b94e99096dea45bea13, type: 3}
 --- !u!82 &1008133576
 AudioSource:
   m_ObjectHideFlags: 0
