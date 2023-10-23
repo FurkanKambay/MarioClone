@@ -48,4 +48,10 @@ public class Health : MonoBehaviour
         transform.position = respawnPosition;
         Respawned?.Invoke();
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("DeathBox"))
+            InflictDamage(MaxHealth, transform.position);
+    }
 }
